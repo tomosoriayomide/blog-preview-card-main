@@ -1,0 +1,46 @@
+.bod{
+    background-color:   hsl(47, 88%, 63%);
+    /* font: 1em sans-serif; */
+}
+.HTML:hover{
+    color: hsl(47, 88%, 63%);
+    cursor: pointer;
+}
+.cont{
+     background-color: white; 
+    width: 25rem;
+    height: 8wvh;
+    /* border-right: 7px black solid; */
+    border-top: 1px black;
+    border-style: solid;
+    /* border-bottom: 8px solid; */
+    border-left: 1px black solid;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 45px; 
+    box-shadow: 13px 13px 0px -4px; 
+    
+} 
+.img{
+    border-radius: 20px;
+    margin: auto 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.learn{
+    background-color:hsl(47, 88%, 63%);
+    margin: 10px;
+    padding: 0%;
+    border: none;
+    font-weight: unset;
+    border-radius: 3px;
+    width: 25%;
+    
+    
+
+    
+
+}
+.check{
+    margin: 20px;
+}
