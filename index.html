@@ -4,12 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Preview</title>
+    <link
+      rel="icon"
+      href="/assets/images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body
     style="background-color: hsl(47, 88%, 63%); font-family: sans-serif"
     class="bod"
+    id="body"
   >
+    <div id="close" onclick="closes()"></div>
+    <div id="settings">
+      <div id="cancel" onclick="closes()">close</div>
+      <p class="bgc" onclick="backgroundColor()">background Color</p>
+      <div id="bgc">
+        <div id="red" onclick="red()"></div>
+        <div id="green" onclick="green()"></div>
+        <div id="blue" onclick="blue()"></div>
+        <div id="pink" onclick="pink()"></div>
+        <div id="yellow" onclick="yellow()"></div>
+      </div>
+      <p class="bgc" onclick="font()">Font</p>
+      <div id="fonts">
+        <div id="sans-serif" onclick="sansserif()">Sans-serif</div>
+        <div id="cursive" onclick="cursive()">Cursive</div>
+        <div id="serif" onclick="serif()">Serif</div>
+      </div>
+    </div>
+    <img
+      src="/assets/images/Settings.jpg"
+      alt=""
+      class="icon"
+      onclick="settings()"
+    />
     <div class="cont">
       <div class="check">
         <img
@@ -17,27 +48,166 @@
           alt=""
           class="img"
         />
-        <button class="learn"><h4>Learning</h4></button>
+        <button class="learn" id="learn"><h4>Learning</h4></button>
         <p>Published 21 Dec 2023</p>
         <h3 class="HTML">HTML & CSS foundations</h3>
         <p style="color: gray">
           These languages are the backbone of every website, defining structure,
           content, and presentation.
         </p>
-        <img src="./assets/images/image-avatar.webp" alt="" /><span
-          style="font-weight: bolder; justify-content: center"
-          >Greg Hooper</span
-        >
+        <div class="greg">
+          <img src="./assets/images/image-avatar.webp" alt="" /><span
+            style="font-weight: bolder; justify-content: center"
+            >Greg Hooper</span
+          >
+        </div>
       </div>
     </div>
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-      >Frontend Mentor</a
-    >. Coded by
-    <a
-      href="https://www.frontendmentor.io/profile/tomosoriayomide"
-      target="_blank"
-      >Tomosori Ayomide</a
-    >.
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a
+        href="https://www.frontendmentor.io/profile/tomosoriayomide"
+        target="_blank"
+        >Tomosori Ayomide</a
+      >.
+    </div>
+    <script>
+      let redBG = document.getElementById("body");
+      let learn = document.getElementById("learn");
+      let redColor = document.getElementById("red");
+      let greenColor = document.getElementById("green");
+      let blueColor = document.getElementById("blue");
+      let pinkColor = document.getElementById("pink");
+      let yellowColor = document.getElementById("yellow");
+      let colors = document.getElementById("bgc");
+      let fonts = document.getElementById("fonts");
+      let sansSerif = document.getElementById("sans-serif");
+      let cursives = document.getElementById("cursive");
+      let serifs = document.getElementById("serif");
+      function backgroundColor() {
+        colors.style.display = "flex";
+      }
+      function sansserif() {
+        redBG.style.fontFamily = "sans-serif";
+        sansSerif.style.backgroundColor = "hsla(0,0%,0%,0.2)";
+        localStorage.setItem("font", "sans-serif");
+        serifs.style.backgroundColor = "white";
+        cursives.style.backgroundColor = "white";
+      }
+      function serif() {
+        redBG.style.fontFamily = "serif";
+        localStorage.setItem("font", "Serif");
+        serifs.style.backgroundColor = "hsla(0,0%,0%,0.2)";
+        cursives.style.backgroundColor = "white";
+        sansSerif.style.backgroundColor = "white";
+      }
+      function cursive() {
+        cursives.style.backgroundColor = "hsla(0,0%,0%,0.2)";
+        serifs.style.backgroundColor = "white";
+        sansSerif.style.backgroundColor = "white";
+        redBG.style.fontFamily = "cursive";
+        localStorage.setItem("font", "Cursive");
+      }
+      function font() {
+        fonts.style.display = "block";
+      }
+      function red() {
+        redBG.style.backgroundColor = "red";
+        learn.style.backgroundColor = "red";
+        redColor.style.boxShadow = "2px 2px 20px 1px black";
+        greenColor.style.boxShadow = "0px 0px 0px 0px";
+        blueColor.style.boxShadow = "0px 0px 0px 0px";
+        pinkColor.style.boxShadow = "0px 0px 0px 0px";
+        yellowColor.style.boxShadow = "0px 0px 0px 0px";
+        localStorage.setItem("backgroundColor", "red");
+      }
+      function green() {
+        redBG.style.backgroundColor = "green";
+        learn.style.backgroundColor = "green";
+        greenColor.style.boxShadow = "2px 2px 20px 1px black";
+        redColor.style.boxShadow = "0px 0px 0px 0px";
+        blueColor.style.boxShadow = "0px 0px 0px 0px";
+        pinkColor.style.boxShadow = "0px 0px 0px 0px";
+        yellowColor.style.boxShadow = "0px 0px 0px 0px";
+        localStorage.setItem("backgroundColor", "green");
+      }
+      function blue() {
+        redBG.style.backgroundColor = "blue";
+        learn.style.backgroundColor = "blue";
+        blueColor.style.boxShadow = "2px 2px 20px 1px black";
+        redColor.style.boxShadow = "0px 0px 0px 0px";
+        greenColor.style.boxShadow = "0px 0px 0px 0px";
+        pinkColor.style.boxShadow = "0px 0px 0px 0px";
+        yellowColor.style.boxShadow = "0px 0px 0px 0px";
+        localStorage.setItem("backgroundColor", "blue");
+      }
+      function pink() {
+        pinkColor.style.boxShadow = "2px 2px 20px 1px black";
+        redBG.style.backgroundColor = "hsl(350, 85%, 45%)";
+        learn.style.backgroundColor = "hsl(350, 85%, 45%)";
+        redColor.style.boxShadow = "0px 0px 0px 0px";
+        blueColor.style.boxShadow = "0px 0px 0px 0px";
+        greenColor.style.boxShadow = "0px 0px 0px 0px";
+        yellowColor.style.boxShadow = "0px 0px 0px 0px";
+        localStorage.setItem("backgroundColor", "pink");
+      }
+      function yellow() {
+        yellowColor.style.boxShadow = "2px 2px 20px 1px black";
+        redBG.style.backgroundColor = " hsl(47, 88%, 63%)";
+        learn.style.backgroundColor = " hsl(47, 88%, 63%)";
+        redColor.style.boxShadow = "0px 0px 0px 0px";
+        blueColor.style.boxShadow = "0px 0px 0px 0px";
+        pinkColor.style.boxShadow = "0px 0px 0px 0px";
+        greenColor.style.boxShadow = "0px 0px 0px 0px";
+        localStorage.setItem("backgroundColor", "yellow");
+      }
+      window.onload = () => {
+        const backgroundColor = localStorage.getItem("backgroundColor");
+        if (backgroundColor === "red") {
+          red();
+        }
+        if (backgroundColor === "green") {
+          green();
+        }
+        if (backgroundColor === "blue") {
+          blue();
+        }
+        if (backgroundColor === "pink") {
+          pink();
+        }
+        if (backgroundColor === "yellow") {
+          yellow();
+        }
+        const font = localStorage.getItem("font");
+        if (font === "sans-serif") {
+          sansserif();
+          console.log("first");
+        }
+        if (font === "Serif") {
+          serif();
+          console.log("second");
+        }
+        if (font === "Cursive") {
+          cursive();
+          console.log("third");
+        }
+      };
+      function settings() {
+        let setting = document.getElementById("settings");
+        let background = document.getElementById("close");
+        setting.style.display = "block";
+        background.style.display = "block";
+      }
+      function closes() {
+        let background = document.getElementById("close");
+        let setting = document.getElementById("settings");
+        setting.style.display = "none";
+        background.style.display = "none";
+      }
+    </script>
   </body>
 </html>
